@@ -66,4 +66,4 @@ MODEL_TRAINER_OVER_FITTING_UNDER_FITTING_THRESHOLD: float = 0.05
 '''
 AWS S3 BUCKET
 '''
-TRAINING_BUCKET_NAME: str = "gaurvitnetwork" 
+TRAINING_BUCKET_NAME: str = "gaurvitnetworkurl" 

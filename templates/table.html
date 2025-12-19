@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>URL Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+
+        .result-box {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            font-size: 18px;
+            width: fit-content;
+        }
+
+        .phishing {
+            background-color: #ffdddd;
+            border: 2px solid #ff0000;
+            color: #a70000;
+        }
+
+        .legitimate {
+            background-color: #ddffdd;
+            border: 2px solid #00aa00;
+            color: #006600;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 15px;
+        }
+
+        th, td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>URL Phishing Detection Result</h2>
+
+    <p><strong>URL:</strong> {{ url }}</p>
+
+    {% if prediction == 'Phishing' %}
+        <div class="result-box phishing">
+            Prediction: <strong>PHISHING WEBSITE</strong>
+        </div>
+    {% else %}
+        <div class="result-box legitimate">
+            Prediction: <strong>LEGITIMATE WEBSITE</strong>
+        </div>
+    {% endif %}
+
+    <h3>Extracted Features</h3>
+    {{ table | safe }}
+
+</body>
+</html>
